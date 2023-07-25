@@ -9,3 +9,7 @@ variable "instancetype" {
 variable "ami-id" {
   default = "ami-053b0d53c279acc90"
 }
+
+variable "key_name" {
+  default = "class2023"
+}
