@@ -5,6 +5,7 @@ pipeline {
         
         stage('Checkout') {
             steps {
-                sh 'hello world'                
+                sh 'rm -rf projCert'
+                git 'https://github.com/Tony1982-sys/projCert.git'                
             }
         }
