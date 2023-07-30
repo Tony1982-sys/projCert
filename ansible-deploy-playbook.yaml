@@ -15,8 +15,8 @@
       when: container_check.stdout != ""
     
     - name: Remove image if exists
-      command: docker pull tonybas1982/phpapp:v1
+      command: docker pull tonybas1982/phpapp:v2
       ignore_errors: true
 
     - name: Deploy new container
-      command: docker run -itd -p 7000:80 --name phpapp tonybas1982/phpapp:v1
+      command: docker run -itd -p 7000:80 --name phpapp tonybas1982/phpapp:v2
