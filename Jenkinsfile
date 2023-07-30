@@ -9,7 +9,6 @@ pipeline {
         }
         stage('Docker build') {
             steps {
-                sh 'cd projCert'
                 sh 'docker build -t tonybas1982/phpapp:v1 .'
             }
         }
