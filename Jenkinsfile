@@ -7,9 +7,8 @@ pipeline {
                 git 'https://github.com/Tony1982-sys/projCert.git'
             }
         }
-        stage('Docker Build') {
+        stage('Docker build') {
             steps {
-                sh 'sudo usermod -a -G docker jenkins'
                 sh 'docker build -t tonybas1982/phpapp:v1 .'
             }
         }
