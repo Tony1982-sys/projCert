@@ -3,14 +3,13 @@ pipeline {
 
     stages {
         stage('git checkout') {
-            steps {
-                sh 'mkdir dockfolder'
-                sh 'cd dockfolder'
+            steps {              
                 git 'https://github.com/Tony1982-sys/projCert.git'
             }
         }
         stage('Docker build') {
             steps {
+                sh 'cd projCert'
                 sh 'docker build -t tonybas1982/phpapp:v1 .'
             }
         }
