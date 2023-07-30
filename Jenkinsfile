@@ -4,22 +4,27 @@ pipeline {
     stages {
         stage('git checkout') {
             steps {
-                echo 'Hello World'
+                git 'https://github.com/Tony1982-sys/projCert.git'
             }
         }
         stage('Docker build') {
             steps {
-                echo 'Hello World'
+                sh 'docker build -t tonybas1982/phpapp:v1 .'
             }
         }
-        stage('Docker log in') {
+        stage('Docker login') {
             steps {
-                echo 'Hello World'
+                sh 'docker login -u tonybas1982 -p Anicle1982#'
             }
         }
         stage('Docker push') {
             steps {
-                echo 'Hello World'
+                sh 'docker push tonybas1982/phpapp:v1'
+            }
+        }
+        stage('Ansible deploy') {
+            steps {
+                sh 'echo 'today@1234' | su -c 'ansible-playbook deploy.yaml' devops'
             }
         }
     }
