@@ -7,7 +7,7 @@ pipeline {
                 git 'https://github.com/Tony1982-sys/projCert.git'
             }
         }
-        stage('Docker build') {
+        stage('Docker Build') {
             steps {
                 sh 'docker build -t tonybas1982/phpapp:v1 .'
             }
