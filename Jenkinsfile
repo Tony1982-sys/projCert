@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Ansible deploy') {
             steps {
-                sh 'echo 'today@1234' | su -c 'ansible-playbook deploy.yaml' devops'
+                sh "echo 'today@1234' | su -c 'ansible-playbook deploy.yaml' devops"
             }
         }
     }
