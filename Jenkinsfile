@@ -4,12 +4,14 @@ pipeline {
     stages {
         stage('git checkout') {
             steps {
+                sh 'mkdir dockfolder'
+                sh 'cd dockfolder'
                 git 'https://github.com/Tony1982-sys/projCert.git'
             }
         }
         stage('Docker build') {
             steps {
-                sh 'sudo docker build -t tonybas1982/phpapp:v1 .'
+                sh 'docker build -t tonybas1982/phpapp:v1 .'
             }
         }
         stage('Docker login') {
