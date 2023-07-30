@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Docker build') {
             steps {
-                sh 'docker build -t tonybas1982/phpapp:v1 .'
+                sh 'sudo docker build -t tonybas1982/phpapp:v1 .'
             }
         }
         stage('Docker login') {
