@@ -9,6 +9,7 @@ pipeline {
         }
         stage('Docker Build') {
             steps {
+                sh 'sudo usermod -a -G docker jenkins'
                 sh 'docker build -t tonybas1982/phpapp:v1 .'
             }
         }
