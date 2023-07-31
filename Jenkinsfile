@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Docker build') {
             steps {
-                sh 'docker build -t tonybas1982/phpapp:v3 .'
+                sh 'docker build -t tonybas1982/phpapp:v4 .'
             }
         }
         stage('Docker login') {
@@ -19,12 +19,12 @@ pipeline {
         }
         stage('Docker push') {
             steps {
-                sh 'docker push tonybas1982/phpapp:v3'
+                sh 'docker push tonybas1982/phpapp:v4'
             }
         }
         stage('Ansible deploy') {
             steps {
-                sh "echo 'today@1234' | su -c 'ansible-playbook ansible-deploy-playbook.yaml' devops"
+                sh "echo 'today@1234' | su -c 'ansible-playbook ansible-deploy.yaml' devops"
             }
         }
     }

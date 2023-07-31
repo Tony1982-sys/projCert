@@ -15,4 +15,4 @@
       when: container_check.stdout != ""
    
     - name: Deploy new container
-      command: docker run -itd -p 7000:80 --name phpapp tonybas1982/phpapp:v3
+      command: docker run -itd -p 7000:80 tonybas1982/phpapp:v3 --name phpapp 
