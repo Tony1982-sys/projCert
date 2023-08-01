@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Docker build') {
             steps {
-                sh 'docker build -t tonybas1982/phpapp:v4 .'
+                sh 'docker build -t tonybas1982/phpapp:${JOB_NAME}-${BUILD_NUMBER} .'
             }
         }
         stage('Docker login') {
@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Docker push') {
             steps {
-                sh 'docker push tonybas1982/phpapp:v4'
+                sh 'docker push tonybas1982/phpapp:${JOB_NAME}-${BUILD_NUMBER}'
             }
         }
         stage('Ansible deploy') {
