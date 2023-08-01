@@ -19,7 +19,7 @@
 
     - name: Pull Docker image
       docker_image:
-        name: tonybas1982/phpapp:${JOB_NAME}-${BUILD_NUMBER}  # Replace with the Docker image you want to deploy
+        name: tonybas1982/phpapp:v5  # Replace with the Docker image you want to deploy
         source: pull
 
     - name: Check if container is running
@@ -35,7 +35,7 @@
     - name: Run Docker container
       docker_container:
         name: phpapp
-        image: tonybas1982/phpapp:${JOB_NAME}-${BUILD_NUMBER} # Replace with the Docker image you want to deploy
+        image: tonybas1982/phpapp:v5 # Replace with the Docker image you want to deploy
         ports:
           - "7000:80"  # Map port 7000 on the host to port 80 inside the container
         restart_policy: unless-stopped  # Automatically restart the container if it stops
