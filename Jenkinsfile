@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Docker build') {
             steps {
-                sh 'docker build -t tonybas1982/phpapp:v5 .'
+                sh 'docker build -t tonybas1982/phpapp:v6 .'
             }
         }
         stage('Docker login') {
@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Docker push') {
             steps {
-                sh 'docker push tonybas1982/phpapp:v5'
+                sh 'docker push tonybas1982/phpapp:v6'
             }
         }
         stage('Ansible deploy') {
